@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import Ninjas from './Ninjas'
 class App extends Component {
-  render() {
-      return (
-        <div className="App">
-            <h1>My first react app</h1>
-            <p>test</p>
-            <Ninjas name='ryu' age='25' belt='black' />
-            <Ninjas name='budi' age='22' belt='white' />
-        </div>
-      );
-  }
+    state = {
+        ninjas: [
+            { name: 'alpha', age: 38, belt: 'black', id: 1},
+            { name: 'beta', age: 28, belt: 'green', id: 2},
+            { name: 'carlie', age: 32, belt: 'yellow', id: 3},
+        ]
+    }
+    render() {
+        return (
+            <div className="App">
+                <h1>My first react app</h1>
+                <p>test</p>
+                <Ninjas ninjas={ this.state.ninjas }/>
+            </div>
+        );
+    }
 }
 
 export default App;
